@@ -48,6 +48,9 @@ Notes:
         description: "Whether to include metadata about the Apex triggers"
       }
     }
+  },
+  annotations: {
+    readOnlyHint: true
   }
 };
 

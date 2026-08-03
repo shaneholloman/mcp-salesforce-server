@@ -80,6 +80,9 @@ Important Rules:
       }
     },
     required: ["objectName", "selectFields", "groupByFields"]
+  },
+  annotations: {
+    readOnlyHint: true
   }
 };
 

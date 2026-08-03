@@ -13,6 +13,9 @@ export const SEARCH_OBJECTS: Tool = {
       }
     },
     required: ["searchPattern"]
+  },
+  annotations: {
+    readOnlyHint: true
   }
 };
 

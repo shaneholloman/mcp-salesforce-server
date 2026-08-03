@@ -54,6 +54,9 @@ Note: When using relationship fields:
       }
     },
     required: ["objectName", "fields"]
+  },
+  annotations: {
+    readOnlyHint: true
   }
 };
 
