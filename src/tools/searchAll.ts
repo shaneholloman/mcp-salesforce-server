@@ -114,6 +114,9 @@ Notes:
       }
     },
     required: ["searchTerm", "objects"]
+  },
+  annotations: {
+    readOnlyHint: true
   }
 };
 

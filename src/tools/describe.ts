@@ -13,6 +13,9 @@ export const DESCRIBE_OBJECT: Tool = {
       }
     },
     required: ["objectName"]
+  },
+  annotations: {
+    readOnlyHint: true
   }
 };
 
