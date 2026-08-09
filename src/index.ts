@@ -7,6 +7,7 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import * as dotenv from "dotenv";
+import { readFileSync } from "fs";
 
 import { createSalesforceConnection } from "./utils/connection.js";
 import { SEARCH_OBJECTS, handleSearchObjects } from "./tools/search.js";
@@ -29,10 +30,15 @@ import { MANAGE_DEBUG_LOGS, handleManageDebugLogs, ManageDebugLogsArgs } from ".
 // MCP servers require stdout to contain ONLY JSON-RPC messages
 dotenv.config();
 
+// Report the real package version to MCP clients (dist/index.js lives one level below package.json)
+const { version: packageVersion } = JSON.parse(
+  readFileSync(new URL("../package.json", import.meta.url), "utf-8"),
+);
+
 const server = new Server(
   {
     name: "salesforce-mcp-server",
-    version: "1.0.0",
+    version: packageVersion,
   },
   {
     capabilities: {
